@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 import { z, ZodError } from 'zod';
 
 // Initialize Resend
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend("re_QEUe5oaG_KqEjvTQzEuZcQV523YewRaF1");
 
 // Validation schema
 const contactSchema = z.object({
