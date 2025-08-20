@@ -4,7 +4,7 @@ import { type NextRequest, NextResponse } from "next/server"
 export async function POST(request: NextRequest) {
   try {
     // Check if API key exists
-    const apiKey = process.env.NEXT_PUBLIC_RESEND_API_KEY;
+    const apiKey = process.env.NEXT_PUBLIC_RESEND_API;
 
     if (!apiKey) {
       console.log("[v0] RESEND_API_KEY is missing from environment variables")
