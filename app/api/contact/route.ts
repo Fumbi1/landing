@@ -1,51 +1,53 @@
-import { type NextRequest, NextResponse } from "next/server"
 import { Resend } from "resend"
-
-const apiKey = process.env.RESEND_API_KEY || "";
-const resend = new Resend(apiKey);
-const contactEmail = process.env.CONTACT_EMAIL || "";
+import { type NextRequest, NextResponse } from "next/server"
 
 export async function POST(request: NextRequest) {
   try {
-    // Get the form data from the request
-    const body = await request.json()
-    const { fullName, email, phoneNumber, schoolName, additionalInfo } = body
+    const apiKey = process.env.RESEND_API_KEY
+    if (!apiKey) {
+      console.error("[v0] RESEND_API_KEY environment variable is missing")
+      return NextResponse.json(
+        { error: "Email service not configured. Please add RESEND_API_KEY environment variable." },
+        { status: 500 },
+      )
+    }
 
-    // Send email using Resend
+    const contactEmail = process.env.CONTACT_EMAIL
+    if (!contactEmail) {
+      console.error("[v0] CONTACT_EMAIL environment variable is missing")
+      return NextResponse.json(
+        { error: "Email service not configured. Please add CONTACT_EMAIL environment variable." },
+        { status: 500 },
+      )
+    }
+
+    const resend = new Resend(apiKey)
+    const body = await request.json()
+
+    const { name, email, message } = body
+
     const { data, error } = await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>",
-      to: [contactEmail], // my email where you want to receive messages
-      subject: `New Contact Form Submission from ${fullName} || "Unknown sender`,
+      to: [contactEmail],
+      subject: `New Contact Form Message from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${fullName}</p>
+        <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phoneNumber || "Not provided"}</p>
-        <p><strong>School:</strong> ${schoolName}</p>
-        <p><strong>Role:</strong> ${additionalInfo || "Not provided"}</p>
-        
-        <hr>
-        <p><em>This message was sent from Wardolf contact form.</em></p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
       `,
     })
 
     if (error) {
-      console.error("Resend error:", error)
+      console.error("[v0] Resend error:", error)
       return NextResponse.json({ error: "Failed to send email" }, { status: 500 })
     }
 
-    // Success! Return a success response
-    return NextResponse.json({
-      message: "Email sent successfully",
-      id: data?.id,
-    })
+    console.log("[v0] Email sent successfully:", data)
+    return NextResponse.json({ message: "Email sent successfully" }, { status: 200 })
   } catch (error) {
-    console.error("Contact form error:", error)
-    return NextResponse.json(
-      {
-        error: "Something went wrong",
-      },
-      { status: 500 },
-    )
+    console.error("[v0] API route error:", error)
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 })
   }
 }
