@@ -4,11 +4,13 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Globe, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 const navigation = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
   { name: 'Services', href: '#services' },
+  { name: 'News', href: '#news' },
   { name: 'Contact', href: '#contact' }
 ];
 
@@ -20,20 +22,17 @@ export function Header() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50"
+      className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50 py-5"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <motion.a href="#home" whileHover={{ scale: 1.05 }} className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center">
-              <Globe className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-bold text-gray-900">Digital Solutions</span>
+            <Image src={'/logo.svg'} alt='logo' width={105} height={70} />
           </motion.a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className='md:flex md:flex-row md:gap-12 hidden'>
             {navigation.map((item) => (
               <motion.a
                 key={item.name}
@@ -44,10 +43,17 @@ export function Header() {
                 {item.name}
               </motion.a>
             ))}
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          </div>
+          <div className="hidden md:flex items-center space-x-8">
+            <motion.div className="flex flex-row" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button asChild className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white rounded-full px-6">
                 <a href="#contact">
-                  Request Info <ArrowRight className="ml-2 w-4 h-4" />
+                  Request Info
+                </a>
+              </Button>
+              <Button asChild className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white rounded-full px-3 border-rounded">
+                <a href="#contact">
+                  <ArrowRight className="w-4 h-4 -rotate-45" />
                 </a>
               </Button>
             </motion.div>
@@ -85,7 +91,7 @@ export function Header() {
                 </a>
               ))}
               <Button asChild className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full">
-                 <a href="#contact" onClick={() => setIsMenuOpen(false)}>Request Info</a>
+                <a href="#contact" onClick={() => setIsMenuOpen(false)}>Request Info</a>
               </Button>
             </div>
           </motion.div>

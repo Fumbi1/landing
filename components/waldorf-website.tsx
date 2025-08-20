@@ -3,7 +3,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Features } from "@/components/sections/Features";
 import { Services } from "@/components/sections/Services";
 import { Trust } from "@/components/sections/Trust";
-import { Contact } from "@/components/sections/Contact";
+import Contact from "@/components/sections/Contact";
 
 export default function WaldorfSchoolsWebsite() {
   return (

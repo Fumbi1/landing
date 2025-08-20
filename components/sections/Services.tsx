@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { BookOpen, Calendar, FileText, MessageSquare, Users } from 'lucide-react';
 import { Variants } from 'framer-motion';
+import Image from 'next/image';
 
 // Animation Variants
 const staggerContainer: Variants = {
@@ -20,11 +21,11 @@ const scaleIn: Variants = {
 };
 
 const services = [
-  { title: "Secure Internal Communication", color: "bg-green-100", icon: MessageSquare },
-  { title: "Digital Lesson Preparation", color: "bg-orange-100", icon: BookOpen },
-  { title: "Digital Student & Parent Management", color: "bg-blue-100", icon: Users },
-  { title: "Online Schedule Management", color: "bg-yellow-100", icon: Calendar },
-  { title: "Document Management", color: "bg-pink-100", icon: FileText }
+  { title: "Secure Internal Communication", color: "bg-green-100", icon: '/f1.svg' },
+  { title: "Digital Lesson Preparation", color: "bg-orange-100", icon: '/f4.svg' },
+  { title: "Digital Student & Parent Management", color: "bg-blue-100", icon: '/f2.svg' },
+  { title: "Online Schedule Management", color: "bg-yellow-100", icon: '/f3.svg' },
+  { title: "Document Management", color: "bg-pink-100", icon: '/f5.svg' }
 ];
 
 export function Services() {
@@ -57,15 +58,11 @@ export function Services() {
               whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)" }}
               className="h-full"
             >
-              <Card className={`${service.color} border-0 h-full cursor-pointer group overflow-hidden shadow-lg rounded-2xl`}>
-                <CardContent className="p-8 h-full flex flex-col items-center text-center">
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="bg-white rounded-xl p-4 w-fit mb-6 shadow-md group-hover:shadow-lg transition-all duration-300"
-                  >
-                    <service.icon className="w-8 h-8 text-gray-700" />
-                  </motion.div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <Card className={`${service.color} border-0 h-[450px] cursor-pointer group overflow-hidden shadow-lg rounded-2xl relative`}>
+                <CardContent className="px-5 h-full flex flex-col items-start text-left">
+
+                  <Image src={service.icon} alt='desc' fill className='absolute bottom-0 scale-95' />
+                  <h3 className="text-xl font-semibold text-gray-900 z-1">
                     {service.title}
                   </h3>
                 </CardContent>
