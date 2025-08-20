@@ -4,7 +4,7 @@ import { type NextRequest, NextResponse } from "next/server"
 export async function POST(request: NextRequest) {
   try {
     // Check if API key exists
-    const apiKey = process.env.RESEND_API_KEY;
+    const apiKey = process.env.NEXT_PUBLIC_RESEND_API_KEY;
 
     if (!apiKey) {
       console.log("[v0] RESEND_API_KEY is missing from environment variables")
@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
     console.log("[v0] API key found, initializing Resend")
     const resend = new Resend(apiKey)
 
-    const contactEmail = process.env.CONTACT_EMAIL;
+    const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
     if (!contactEmail) {
       console.error("[v0] CONTACT_EMAIL environment variable is missing")
       return NextResponse.json(
