@@ -30,8 +30,10 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-20 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-20 bg-[#FFF1E3] relative">
+      <Image src={'/cloud-2.svg'} width={1920} height={591} alt='cloud' className='absolute -bottom-15 z-2' />
+      <Image src={'/cloud-3.svg'} width={1920} height={846} alt='cloud' className='absolute -top-15 z-2' />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-5">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -40,7 +42,7 @@ export function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Features That Simplify <span className="text-cyan-600">School Life</span>
+            Features That Simplify <br /><span className="text-cyan-600">School Life</span>
           </h2>
         </motion.div>
 

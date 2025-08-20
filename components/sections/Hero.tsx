@@ -26,8 +26,11 @@ const slideInRight: Variants = {
 
 export function Hero() {
   return (
-    <section id="home" className="pt-32 pb-16 bg-gradient-to-br from-blue-50 via-white to-cyan-50 relative overflow-hidden">
-      <Image src={'/cloud.svg'} alt='cloud' width={2322} height={749} className='absolute -bottom-3 -left-[4%] z-12 max-xl:bottom-1'/>
+    <section id="home" className="pt-32 pb-16 bg-[#E3F6FF] relative overflow-hidden">
+      <Image src={'/cloud.svg'} alt='cloud' width={2322} height={749} className='absolute -bottom-3 z-12 max-xl:bottom-0'/>
+      <Image src={'/Group.svg'} alt='cloud' width={85.55} height={97} className='absolute md:bottom-20 bottom-60 scale-75 md:left-[45%] left-[15%] z-12 max-xl:bottom-1'/>
+      <Image src={'/Group-1.svg'} alt='cloud' width={106.77} height={120.59} className='absolute md:top-40 top-64 scale-75 md:right-[4%] right-2 z-12 max-xl:bottom-1'/>
+      <Image src={'/Group-2.svg'} alt='cloud' width={71.37} height={79.11} className='absolute top-30 left-1/2 scale-75 z-12 max-xl:bottom-1'/>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -46,7 +49,7 @@ export function Hero() {
             <motion.p variants={fadeInUp} className="text-xl text-gray-600 mb-2 max-w-xl mx-auto lg:mx-0">
               Individual. Secure. Easy to use.
             </motion.p>
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeInUp}className='relative z-14'>
               <motion.div className="max-md:w-full max-md:items-center max-lg:justify-center flex flex-row items-center" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button asChild className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white rounded-full px-6">
                   <a href="#contact">
@@ -66,7 +69,7 @@ export function Hero() {
             <motion.div
               whileHover={{ scale: 1.02, rotate: 1 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="relative z-10"
+              className="relative z-10 max-md:top-30"
             >
               <Image
                 src="/hero.svg"

@@ -27,12 +27,12 @@ const features = [
   {
     icon: CheckCircle,
     title: "Easy & Intuitive",
-    description: "Simple user interface for teachers & learners"
+    description: "Simple user interface for administration & teachers"
   },
   {
     icon: Lock,
     title: "Secure & GDPR Compliant",
-    description: "Top-level security of data, robust safety & compliance"
+    description: "Reliable protection of your school's sensitive data"
   },
   {
     icon: Layers,
@@ -54,13 +54,16 @@ export function Features() {
         >
           <motion.div variants={slideInLeft} className="flex-1">
             <motion.div whileHover={{ scale: 1.02 }} className="relative">
-              {/* Using an image that reflects the design */}
-              <Image 
-                src="/features-image.png" // Add image to /public
+              <Image src={'/Ellipse-12.svg'} width={31} height={35} alt='opps' className='absolute bottom-0 left-[5%]' />
+              <Image src={'Ellipse-13.svg'} width={31} height={35} alt='opps' className='absolute top-1/12 -right-8' />
+              <Image src={'Ellipse-14.svg'} width={31} height={24} alt='opps' className='absolute' />
+              <Image src={'Ellipse-15.svg'} width={20} height={35} alt='opps' className='absolute -top-15 left-1/2' />
+              <Image
+                src="/features.svg"
                 alt="Children interacting with technology"
-                width={500}
-                height={550}
-                className="rounded-3xl shadow-xl object-cover mx-auto"
+                width={730}
+                height={560.26}
+                className="object-cover mx-auto"
               />
             </motion.div>
           </motion.div>
@@ -68,10 +71,10 @@ export function Features() {
           <motion.div variants={slideInRight} className="flex-1">
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Modern Administration Aligned With{" "}
-              <span className="text-cyan-600">Waldorf Pedagogy</span>
+              <span className="text-[#0594D5]">Waldorf Pedagogy</span>
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-gray-600 mb-8 text-lg">
-              Our system combines efficient administrative tools with a human-centered approach and pedagogical digital lesson planning.
+              Our school system was specifically developed for the needs of Waldorf schools. It combines efficient administration, secure communication, and digital lesson planning – all in harmony with Waldorf educational values.
             </motion.p>
 
             <motion.div variants={staggerContainer} className="space-y-6">
@@ -88,6 +91,7 @@ export function Features() {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1 text-lg">{feature.title}</h3>
                     <p className="text-gray-600">{feature.description}</p>
+                    <hr className='bg-[#00000033] h-[2px] mt-8'/>
                   </div>
                 </motion.div>
               ))}
