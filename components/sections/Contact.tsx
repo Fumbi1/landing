@@ -181,32 +181,35 @@ export default function Contact({ id = "contact" }: ContactSectionProps) {
               </motion.h2>
               {/* Form Fields */}
               <motion.div variants={fadeInUp}>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                <label htmlFor="fullName"  className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
                 <Input
                   {...register("fullName")}
                   className="rounded-xl border-gray-200 focus:border-cyan-400 focus:ring-cyan-400"
                   placeholder="John Doe"
+                  id="name"
                   disabled={submissionState === "loading"}
                 />
                 {errors.fullName && <p className="mt-1 text-sm text-red-600">{errors.fullName.message}</p>}
               </motion.div>
 
               <motion.div variants={fadeInUp}>
-                <label className="block text-sm font-medium text-gray-700 mb-2">School Name *</label>
+                <label htmlFor="schoolName" className="block text-sm font-medium text-gray-700 mb-2">School Name *</label>
                 <Input
                   {...register("schoolName")}
                   className="rounded-xl border-gray-200 focus:border-cyan-400 focus:ring-cyan-400"
                   placeholder="Your School Name"
+                  id="schoolName"
                   disabled={submissionState === "loading"}
                 />
                 {errors.schoolName && <p className="mt-1 text-sm text-red-600">{errors.schoolName.message}</p>}
               </motion.div>
               <motion.div variants={fadeInUp}>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Role in School (optional)</label>
+                <label htmlFor="additionalInfo" className="block text-sm font-medium text-gray-700 mb-2">Role in School (optional)</label>
                 <Textarea
                   {...register("additionalInfo")}
                   className="rounded-xl border-gray-200 focus:border-cyan-400 focus:ring-cyan-400 min-h-[100px]"
                   placeholder="your role(s)"
+                  id="additionalInfo"
                   disabled={submissionState === "loading"}
                 />
                 {errors.additionalInfo && <p className="mt-1 text-sm text-red-600">{errors.additionalInfo.message}</p>}
@@ -214,23 +217,25 @@ export default function Contact({ id = "contact" }: ContactSectionProps) {
 
               <div className="grid md:grid-cols-2 gap-4">
                 <motion.div variants={fadeInUp}>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
                   <Input
                     type="email"
                     {...register("email")}
                     className="rounded-xl border-gray-200 focus:border-cyan-400 focus:ring-cyan-400"
                     placeholder="your.email@school.de"
+                    id="email"
                     disabled={submissionState === "loading"}
                   />
                   {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
                 </motion.div>
 
                 <motion.div variants={fadeInUp}>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                  <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
                   <Input
                     {...register("phoneNumber")}
                     className="rounded-xl border-gray-200 focus:border-cyan-400 focus:ring-cyan-400"
                     placeholder="+49 30 123 456"
+                    id="phoneNumber"
                     disabled={submissionState === "loading"}
                   />
                   {errors.phoneNumber && <p className="mt-1 text-sm text-red-600">{errors.phoneNumber.message}</p>}
