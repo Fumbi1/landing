@@ -122,6 +122,8 @@ export default function Contact({ id = "contact" }: ContactSectionProps) {
     <section id={id} className="py-38 bg-[#FFF0F3] relative">
       <Image src={'/cloud-4.svg'} alt="cloud" width={1920} height={782} className="absolute -top-15 z-2" />
       <Image src={'/cloud-5.svg'} alt="cloud" width={1920} height={162} className="absolute -bottom-15 z-2" />
+      <Image src={'/rocket.svg'} alt="cloud" width={128} height={130} className="absolute top-10 z-2" />
+      <Image src={'/message.svg'} alt="cloud" width={110} height={99} className="absolute right-0 bottom-10 z-2" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-5">
         <motion.div
           ref={ref}
@@ -286,7 +288,7 @@ export default function Contact({ id = "contact" }: ContactSectionProps) {
                           initial={{ opacity: 0, scale: 0.8 }}
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.8 }}
-                          className="flex items-center"
+                          className="flex items-center bg-green-600"
                         >
                           <CheckCircle className="w-5 h-5 mr-2" />
                           Message Sent Successfully!

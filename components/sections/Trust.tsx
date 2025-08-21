@@ -14,7 +14,7 @@ const fadeInUp: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
 };
 
-const partners = ["/paypal.svg", "/new-youtube.svg", "/national-geographic.svg", "/google.svg", "/office-365.svg", "/apple.svg",];
+const partners = ["/paypall.png", "/new-youtube.svg", "/national-geographic.svg", "/google.svg", "/office-365.svg", "/appple.png",];
 
 export function Trust() {
   return (
@@ -33,8 +33,8 @@ export function Trust() {
 
           <motion.div
             variants={staggerContainer}
-            className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6"
-          >
+            className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 relative"
+          ><div className='w-full h-full absolute bg-[#FFFFFF80] opacity-20 top-0 left-0'></div>
             {partners.map((partner) => (
               <motion.div
                 key={partner}

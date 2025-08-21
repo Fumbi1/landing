@@ -6,9 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-50 border-t border-gray-200 pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Main footer content */}
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-          {/* Logo and tagline */}
+        <div className="flex flex-col justify-center items-center lg:flex-row lg:items-center lg:justify-between gap-8">
           <div className="flex flex-col items-center lg:items-start max-w-sm">
             <Link href="#home"  className="flex items-center space-x-2 mb-4">
             <Image src={'/logo.svg'} alt='logo' width={105} height={70} />
@@ -17,8 +15,6 @@ export default function Footer() {
               Digital solutions that align with Waldorf <br /> educational principles.
             </p>
           </div>
-
-          {/* Navigation links */}
           <nav className="flex flex-wrap justify-center lg:justify-start gap-8">
             <a href="#home" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
               Home
@@ -36,8 +32,6 @@ export default function Footer() {
               Contact
             </a>
           </nav>
-
-          {/* Social media icons */}
           <div className="flex justify-center lg:justify-end gap-3">
             <a
               href="#"
@@ -69,8 +63,6 @@ export default function Footer() {
             </a>
           </div>
         </div>
-
-        {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-gray-200">
           <p className="text-center text-gray-500 text-sm">© 2025 Waldorf School System. All rights reserved.</p>
         </div>
