@@ -186,7 +186,7 @@ export default function Contact({ id = "contact" }: ContactSectionProps) {
                   {...register("fullName")}
                   className="rounded-xl border-gray-200 focus:border-cyan-400 focus:ring-cyan-400"
                   placeholder="John Doe"
-                  id="name"
+                  id="fullName"
                   disabled={submissionState === "loading"}
                 />
                 {errors.fullName && <p className="mt-1 text-sm text-red-600">{errors.fullName.message}</p>}
