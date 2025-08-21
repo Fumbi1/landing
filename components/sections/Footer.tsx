@@ -20,19 +20,19 @@ export default function Footer() {
 
           {/* Navigation links */}
           <nav className="flex flex-wrap justify-center lg:justify-start gap-8">
-            <a href="#" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+            <a href="#home" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
               Home
             </a>
-            <a href="#" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+            <a href="#about" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
               About
             </a>
-            <a href="#" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
-              Service
+            <a href="#services" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+              Services
             </a>
-            <a href="#" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+            <a href="#news" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
               News
             </a>
-            <a href="#" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
+            <a href="#contact" className="text-gray-700 hover:text-gray-900 font-medium transition-colors">
               Contact
             </a>
           </nav>
