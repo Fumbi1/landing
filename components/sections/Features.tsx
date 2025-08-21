@@ -77,12 +77,10 @@ export function Features() {
               Our school system was specifically developed for the needs of Waldorf schools. It combines efficient administration, secure communication, and digital lesson planning – all in harmony with Waldorf educational values.
             </motion.p>
 
-            <motion.div variants={staggerContainer} className="space-y-6">
+            <motion.div  className="space-y-6">
               {features.map((feature) => (
                 <motion.div
                   key={feature.title}
-                  variants={fadeInUp}
-                  whileHover={{ scale: 1.02, x: 10 }}
                   className="flex items-start space-x-4 p-4 rounded-xl hover:bg-gray-50/80 transition-all duration-300"
                 >
                   <div className="bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl p-3 shadow-lg">

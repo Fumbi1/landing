@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Globe, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const navigation = [
   { name: 'Home', href: '#home' },
@@ -81,17 +82,17 @@ export function Header() {
           >
             <div className="px-4 py-4 space-y-3">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className="block text-gray-600 hover:text-cyan-600 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               <Button asChild className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full">
-                <a href="#contact" onClick={() => setIsMenuOpen(false)}>Request Info</a>
+                <Link href="#contact" onClick={() => setIsMenuOpen(false)}>Request Info</Link>
               </Button>
             </div>
           </motion.div>

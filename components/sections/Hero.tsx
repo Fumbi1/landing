@@ -67,8 +67,6 @@ export function Hero() {
 
           <motion.div variants={slideInRight} className="flex-1 relative">
             <motion.div
-              whileHover={{ scale: 1.02, rotate: 1 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
               className="relative z-10 max-md:top-30"
             >
               <Image
