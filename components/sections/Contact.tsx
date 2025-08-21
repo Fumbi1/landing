@@ -145,24 +145,19 @@ export default function Contact({ id = "contact" }: ContactSectionProps) {
 
             <motion.div variants={fadeInUp} className="space-y-6">
               <div className="flex flex-row gap-8">
-                <motion.a
-                  href="https://www.google.com/maps/search/?api=1&query=Schellstr.+47,+45134+Essen"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <motion.div
                   whileHover={{ scale: 1.02, x: 5 }}
                   className="text-gray-600 hover:text-cyan-600 transition-all duration-300 bg-white p-6 border rounded-3xl"
                 >
                   <p className="mb-2 text-black font-bold">Address</p>
                   <span>Schellstr. 47 · 45134 Essen</span>
-                </motion.a>
-                <motion.a
-                  href="tel:+493012345"
-                  whileHover={{ scale: 1.02, x: 5 }}
+                </motion.div>
+                <motion.div
                   className=" text-gray-600 hover:text-cyan-600 transition-all duration-300 bg-white p-6 border rounded-3xl"
                 >
                   <p className="mb-2 text-black font-bold">Phone Number</p>
                   <span>+49 30 123 456</span>
-                </motion.a>
+                </motion.div>
               </div>
 
               <motion.div variants={fadeInUp} className="w-3/4 bg-white p-8 border rounded-3xl border-gray-200">
