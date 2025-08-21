@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Variants } from 'framer-motion';
+import Image from 'next/image';
 
 // Animation Variants
 const staggerContainer: Variants = {
@@ -13,11 +14,11 @@ const fadeInUp: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
 };
 
-const partners = ["PayPal", "YouTube", "Google", "Office 365", "Apple", "Stripe"];
+const partners = ["/paypal.svg", "/new-youtube.svg", "/national-geographic.svg", "/google.svg", "/office-365.svg", "/apple.svg",];
 
 export function Trust() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-36 bg-white" id='news'>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -26,8 +27,8 @@ export function Trust() {
           variants={staggerContainer}
           className="text-center"
         >
-          <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-gray-500 mb-12">
-            Trusted By Waldorf Schools Across Germany
+          <motion.h2 variants={fadeInUp} className="text-3xl font-bold text-[#181818] mb-12">
+            Trusted By <br /><span className='text-[#0594D5]'>Waldorf Schools Across Germany</span>
           </motion.h2>
 
           <motion.div
@@ -41,7 +42,7 @@ export function Trust() {
                 whileHover={{ scale: 1.1, color: '#333' }}
                 className="text-gray-400 font-semibold text-2xl transition-colors duration-300"
               >
-                {partner}
+                <Image src={partner} alt='logos' width={150} height={150} />
               </motion.div>
             ))}
           </motion.div>

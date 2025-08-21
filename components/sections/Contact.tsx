@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
+import Image from "next/image"
 
 // Animation variants
 const fadeInUp: Variants = {
@@ -118,8 +119,10 @@ export default function Contact({ id = "contact" }: ContactSectionProps) {
   }
 
   return (
-    <section id={id} className="py-20 bg-gradient-to-br from-pink-50 via-white to-blue-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id={id} className="py-38 bg-[#FFF0F3] relative">
+      <Image src={'/cloud-4.svg'} alt="cloud" width={1920} height={782} className="absolute -top-15 z-2" />
+      <Image src={'/cloud-5.svg'} alt="cloud" width={1920} height={162} className="absolute -bottom-15 z-2" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-5">
         <motion.div
           ref={ref}
           initial="hidden"
@@ -129,43 +132,41 @@ export default function Contact({ id = "contact" }: ContactSectionProps) {
         >
           {/* Contact Information */}
           <motion.div variants={slideInLeft} className="flex-1">
-            <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Let's talk!
-            </motion.h2>
-            <motion.h3 variants={fadeInUp} className="text-xl text-cyan-600 font-semibold mb-8">
-              Request Information <span className="text-gray-900">Now Without Obligation!</span>
+            <motion.h3 variants={fadeInUp} className="text-4xl text-cyan-600 font-400 mb-8 relative">
+              <Image src={'/float-msg.svg'} alt="cloud" width={112} height={56} className="absolute -top-0 right-30 z-2" />
+              Request Information <br /><span className="text-gray-900">Now Without Obligation!</span>
             </motion.h3>
 
+            <motion.p className="mb-12">
+              We'd be happy to send you more details about our school system. <br /> Simply fill out the form
+            </motion.p>
+
             <motion.div variants={fadeInUp} className="space-y-6">
-              <motion.a
-                href="https://www.google.com/maps/search/?api=1&query=Schellstr.+47,+45134+Essen"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.02, x: 5 }}
-                className="flex items-center space-x-3 text-gray-600 hover:text-cyan-600 transition-all duration-300 group"
-              >
-                <div className="p-2 bg-cyan-100 rounded-lg group-hover:bg-cyan-200 transition-colors">
-                  <MapPin className="w-5 h-5 text-cyan-500" />
-                </div>
-                <span>Schellstr. 47 · 45134 Essen</span>
-              </motion.a>
+              <div className="flex flex-row gap-8">
+                <motion.a
+                  href="https://www.google.com/maps/search/?api=1&query=Schellstr.+47,+45134+Essen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02, x: 5 }}
+                  className="text-gray-600 hover:text-cyan-600 transition-all duration-300 bg-white p-6 border rounded-3xl"
+                >
+                  <p className="mb-2 text-black font-bold">Address</p>
+                  <span>Schellstr. 47 · 45134 Essen</span>
+                </motion.a>
+                <motion.a
+                  href="tel:+493012345"
+                  whileHover={{ scale: 1.02, x: 5 }}
+                  className=" text-gray-600 hover:text-cyan-600 transition-all duration-300 bg-white p-6 border rounded-3xl"
+                >
+                  <p className="mb-2 text-black font-bold">Phone Number</p>
+                  <span>+49 30 123 456</span>
+                </motion.a>
+              </div>
 
-              <motion.a
-                href="tel:+493012345"
-                whileHover={{ scale: 1.02, x: 5 }}
-                className="flex items-center space-x-3 text-gray-600 hover:text-cyan-600 transition-all duration-300 group"
-              >
-                <div className="p-2 bg-cyan-100 rounded-lg group-hover:bg-cyan-200 transition-colors">
-                  <Phone className="w-5 h-5 text-cyan-500" />
-                </div>
-                <span>+49 30 123 456</span>
-              </motion.a>
-
-              <motion.div variants={fadeInUp} className="pt-4 border-t border-gray-200">
+              <motion.div variants={fadeInUp} className="w-3/4 bg-white p-8 border rounded-3xl border-gray-200">
                 <div className="text-sm text-gray-500">
                   <p className="font-medium mb-2 text-gray-700">Opening Hours:</p>
-                  <p>Mon-Fri: 9:00 AM - 6:00 PM</p>
-                  <p>Sat-Sun: Closed - Family Time</p>
+                  <p>8:00 AM - 2:30 PM (Monday - Friday)</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -178,6 +179,9 @@ export default function Contact({ id = "contact" }: ContactSectionProps) {
               variants={staggerContainer}
               className="space-y-6 bg-white rounded-2xl p-8 shadow-xl border border-gray-100"
             >
+              <motion.h2 variants={fadeInUp} className="text-lg md:text-xl font-bold text-gray-900 mb-4">
+                Let's talk!
+              </motion.h2>
               {/* Form Fields */}
               <motion.div variants={fadeInUp}>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>

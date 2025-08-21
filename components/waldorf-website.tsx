@@ -4,6 +4,7 @@ import { Features } from "@/components/sections/Features";
 import { Services } from "@/components/sections/Services";
 import { Trust } from "@/components/sections/Trust";
 import Contact from "@/components/sections/Contact";
+import Footer from "./sections/Footer";
 
 export default function WaldorfSchoolsWebsite() {
   return (
@@ -16,7 +17,7 @@ export default function WaldorfSchoolsWebsite() {
         <Trust />
         <Contact />
       </main>
-      {/* A simple footer can be added here */}
+      <Footer />
     </div>
   );
 }
