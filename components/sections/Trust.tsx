@@ -14,7 +14,7 @@ const fadeInUp: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
 };
 
-const partners = ["/paypall.png", "/new-youtube.svg", "/national-geographic.svg", "/google.svg", "/office-365.svg", "/appple.png",];
+const partners = ["/paypal .png", "/new-youtube.svg", "/national-geographic.svg", "/google.svg", "/office-365.svg", "/appple.png",];
 
 export function Trust() {
   return (
