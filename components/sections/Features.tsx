@@ -53,7 +53,7 @@ export function Features() {
           className="flex flex-col lg:flex-row items-center gap-16"
         >
           <motion.div variants={slideInLeft} className="flex-1">
-            <motion.div whileHover={{ scale: 1.02 }} className="relative">
+            <motion.div className="relative">
               <Image src={'/Ellipse-12.svg'} width={31} height={35} alt='opps' className='absolute bottom-0 left-[5%]' />
               <Image src={'Ellipse-13.svg'} width={31} height={35} alt='opps' className='absolute top-1/12 -right-8' />
               <Image src={'Ellipse-14.svg'} width={31} height={24} alt='opps' className='absolute' />

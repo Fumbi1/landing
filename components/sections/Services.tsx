@@ -32,8 +32,10 @@ export function Services() {
     <section id="services" className="py-38 bg-[#FFF1E3] relative">
       <Image src={"/cloud-2.svg"} width={1920} height={591} alt="cloud" className="absolute -bottom-15 z-2" />
       <Image src={"/cloud-3.svg"} width={1920} height={846} alt="cloud" className="absolute -top-15 z-2" />
-      <Image src={"/plane.svg"} width={84} height={110} alt="cloud" className="absolute bottom-10 left-5 z-2" />
-      <Image src={"/location.svg"} width={198} height={93} alt="cloud" className="absolute top-10 left-1/6 z-2" />
+      <Image src={"/plane.svg"} width={84} height={110} alt="locate" className="absolute bottom-10 left-5 z-2" />
+      <Image src={"/location.svg"} width={198} height={93} alt="planee" className="absolute top-10 left-1/6 z-2" />
+      <Image src={"/bulb.svg"} width={198} height={93} alt="bulb" className="absolute bottom-1/2 -right-5 z-2" />
+      <Image src={"/line.svg"} width={161.83} height={321.13} alt="line" className="absolute top-30 left-1/12 z-2" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-5">
         <motion.div
           initial="hidden"
@@ -60,6 +62,7 @@ export function Services() {
               <motion.div
                 key={service.title}
                 variants={scaleIn}
+                whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)" }}
                 className="h-full"
               >
                 <Card

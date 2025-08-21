@@ -121,7 +121,7 @@ export default function Contact({ id = "contact" }: ContactSectionProps) {
   return (
     <section id={id} className="py-38 bg-[#FFF0F3] relative">
       <Image src={'/cloud-4.svg'} alt="cloud" width={1920} height={782} className="absolute -top-15 z-2" />
-      <Image src={'/cloud-5.svg'} alt="cloud" width={1920} height={162} className="absolute -bottom-15 z-2" />
+      <Image src={'/cloud-5.svg'} alt="cloud" width={1920} height={162} className="absolute -bottom-15 max-md:-bottom-5 z-2" />
       <Image src={'/rocket.svg'} alt="cloud" width={128} height={130} className="absolute top-10 z-2" />
       <Image src={'/message.svg'} alt="cloud" width={110} height={99} className="absolute right-0 bottom-10 z-2" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-5">
@@ -156,7 +156,7 @@ export default function Contact({ id = "contact" }: ContactSectionProps) {
                   className=" text-gray-600 hover:text-cyan-600 transition-all duration-300 bg-white p-6 border rounded-3xl"
                 >
                   <p className="mb-2 text-black font-bold">Phone Number</p>
-                  <span>+49 30 123 456</span>
+                  <span className="underline">+49 (020) 143-5150</span>
                 </motion.div>
               </div>
 
